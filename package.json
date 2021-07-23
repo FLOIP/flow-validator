@@ -1,0 +1,27 @@
+{
+  "name": "flow-validator",
+  "version": "1.0.0",
+  "description": "Validation API for Flow Interoperability flows (https://flowinterop.org)",
+  "main": "index.js",
+  "author": "Mark Boots <mark.boots@viamo.io>",
+  "license": "MIT",
+  "dependencies": {
+    "@floip/flow-runner": "1.0.0-rc2.3",
+    "@types/express": "^4.17.13",
+    "express": "^4.17.1",
+    "serverless-http": "^2.7.0"
+  },
+  "scripts": {
+    "build": "tsc --declaration",
+    "clean": "rm -f tsconfig.tsbuildinfo && rm -rf .build/",
+    "test": "yarn tsc-test && yarn jest",
+    "tsc-test": "tsc --project . --noEmit",
+    "upgrade-ts": "yarn upgrade typescript eslint @typescript-eslint/eslint-plugin @typescript-eslint/parser @typescript-eslint/typescript-estree"
+  },
+  "devDependencies": {
+    "serverless": "^2.52.1",
+    "serverless-offline": "^7.0.0",
+    "serverless-plugin-typescript": "^1.1.9",
+    "typescript": "^4.3.5"
+  }
+}

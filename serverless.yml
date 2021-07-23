@@ -1,0 +1,22 @@
+service: flow-validator
+
+provider:
+  name: aws
+  runtime: nodejs14.x
+  stage: ''
+  region: us-east-1
+
+functions:
+  app:
+    handler: index.handler
+    events:
+      - http: ANY /
+      - http: 'ANY /{proxy+}'
+
+plugins:
+  - serverless-plugin-typescript
+  - serverless-offline
+
+package:
+  patterns:
+    - '!node_modules/@floip/expression-parser/.composer/**'
